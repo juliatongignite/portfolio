@@ -19,12 +19,12 @@ function Section1() {
 
                             <Its_me text="it's me" className="text-4xl md:text-5xl lg:text-7xl xl:text-9xl leading-none" delay={0.1} speed={0.06} />
 
-                            <motion.p initial={{y : 25, opacity : 0}} animate={{y : 0, opacity : 1, transition : {duration : 0.5, delay : 0.7}}} className='text-white font-poppins max-w-60 text-sm md:text-base hidden md:block'>passionate and creative photographer with over 5+ years of experience</motion.p>
+                            <motion.p initial={{y : 25, opacity : 0}} animate={{y : 0, opacity : 1, transition : {duration : 0.5, delay : 0.7}}} className='text-white font-poppins max-w-60 text-sm md:text-base hidden md:block'>Passionate and creative photographer with over 5+ years of experience</motion.p>
                         </div>
 
                     </div>
 
-                    <div className='flex w-full absolute left-0 -bottom-5 md:-bottom-6 lg:-bottom-10 xl:-bottom-[70px]'>
+                    <div className='flex w-full absolute left-0 -bottom-5 md:-bottom-6 lg:-bottom-10 xl:-bottom-[68px]'>
 
                         <Marquee className='overflow-hidden' direction='left' autoFill={true} loop={0}
                             // gradient={true} gradientColor='#232323'
