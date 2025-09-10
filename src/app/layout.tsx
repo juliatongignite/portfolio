@@ -5,6 +5,10 @@ import { Playfair_Display, Poppins, ABeeZee, Instrument_Sans } from "next/font/g
 import "./globals.css"
 import localFont from "next/font/local";
 import Cursor from "@/components/Shared/Cursor";
+import Footer from "@/components/Shared/Footer";
+import ScrollToTop from "@/components/Shared/ScrollToTop";
+import NextJsTopLoader from "@/components/Shared/NextJsTopLoader";
+import SmoothScroll from "@/components/Shared/SmothScroll";
 
 const engula = localFont({
   src: "../../fonts/Engula_ExtraBlack.ttf",
@@ -59,10 +63,14 @@ export default function RootLayout({
       <body
         className={`font-serif ${playfairDisplay.variable} ${popin.variable} ${abeeze.variable} ${engula.variable} ${instrument.variable} antialiased`}
       >
+        <NextJsTopLoader />
+        <ScrollToTop />
         <Cursor />
-        <Navbar />
-        
-        {children}
+        {/* <SmoothScroll > */}
+          <Navbar />
+          {children}
+          <Footer />
+        {/* </SmoothScroll> */}
       </body>
 
     </html>

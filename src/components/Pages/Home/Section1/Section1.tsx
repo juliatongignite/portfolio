@@ -10,7 +10,9 @@ function Section1() {
     return (
         <div>
             <div className="relative">
-                <Image src={heroImg} alt="hero-image" placeholder='blur' className='w-full h-72 md:h-auto xl:max-h-[800px] 2xl:max-h-[850px] object-cover' />
+                <Image src={heroImg} alt="Juliyatong hero-image" placeholder='blur' className='w-full h-80 md:h-[450px] lg:h-screen object-cover' />
+
+                {/* w-full h-72 md:h-[450px] lg:h-[600px] xl:max-h-[800px] 2xl:max-h-[850px] object-cover */}
 
                 <div className="absolute top-0 left-0 w-full bg-gradient-to-b from-black/40 to-black/0 z-10 h-full">
                     <div className='relative h-full w-full container'>
@@ -19,7 +21,7 @@ function Section1() {
 
                             <Its_me text="it's me" className="text-4xl md:text-5xl lg:text-7xl xl:text-9xl leading-none" delay={0.1} speed={0.06} />
 
-                            <motion.p initial={{y : 25, opacity : 0}} animate={{y : 0, opacity : 1, transition : {duration : 0.5, delay : 0.7}}} className='text-white font-poppins max-w-60 text-sm md:text-base hidden md:block'>Passionate and creative photographer with over 5+ years of experience</motion.p>
+                            <motion.p initial={{y : 25, opacity : 0}} animate={{y : 0, opacity : 1, transition : {duration : 0.5, delay : 0.7}}} className='text-white font-poppins max-w-60 text-sm md:text-base hidden md:block'>passionate and creative photographer with over 5+ years of experience</motion.p>
                         </div>
 
                     </div>
