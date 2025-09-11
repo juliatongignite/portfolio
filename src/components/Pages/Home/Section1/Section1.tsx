@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import heroImg from "../../../../../public/hero-bg.png"
+import heroImg1 from "../../../../../public/hero-bg1.jpeg"
 import Its_me from './Its_me'
 import { motion } from "motion/react"
 import Marquee from 'react-fast-marquee'
@@ -32,7 +33,7 @@ function Section1() {
                             // gradient={true} gradientColor='#232323'
                             speed={80}>
                             <h1 className="text-8xl md:text-9xl lg:text-[200px] xl:text-[340px] leading-none font-engula text-white uppercase pr-6 md:pr-10 lg:pr-14 xl:pr-16">
-                                Julia Tong
+                                Julia Tong Artist
                             </h1>
                         </Marquee>
 
