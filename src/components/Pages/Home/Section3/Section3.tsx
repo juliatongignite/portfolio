@@ -3,6 +3,9 @@ import React from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { motion } from "motion/react"
 import Carousel from './Carousel'
+import Link from 'next/link'
+
+const MotionLink = motion(Link)
 
 function Section3() {
   return (
@@ -20,7 +23,8 @@ function Section3() {
             <span className='font-playfair font-normal italic text-primary'>Works</span>
           </motion.h3>
 
-          <motion.button
+          <MotionLink
+            href={"/art-gallery"}
             initial={{ x: 100, opacity: 0 }}
             whileInView={{
               x: 0,
@@ -39,7 +43,7 @@ function Section3() {
               <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-primary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
             </span>
 
-          </motion.button>
+          </MotionLink>
         </div>
 
         {/* --------------carousel----------- */}

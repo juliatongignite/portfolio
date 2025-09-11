@@ -49,25 +49,21 @@ export default function Section2() {
                             </div>
                         </div>
 
-                        <p className='font-poppins text-base xl:text-lg text-zinc-400 max-w-md xl:max-w-lg'>I am a passionate painting artist who expresses emotions, stories, and ideas through colors, textures, and brushstrokes. My work is inspired by the beauty of everyday life, nature, and the depth of human experience. Each painting I create is not just a visual composition but also a reflection of my thoughts, feelings, and philosophy.</p>
-                        
+                        <p className='font-poppins text-base xl:text-lg text-zinc-400 max-w-md xl:max-w-lg'>I am Julia Tong, a painter and historian whose practice bridges memory, philosophy, and visual storytelling. My Chinese American identity shapes the way I see time — both as cyclical, flowing in Daoist rhythms of yin and yang, and as archival, preserved in the mind palaces of history. These dual perspectives guide my work: I paint not only to capture a moment, but to transform it into a universal offering of empathy and connection.</p>
+
+
+
                     </div>
 
-                    <div className='mt-8 md:mt-12 xl:mt-16 flex flex-col md:flex-row gap-5 justify-between items-start'>
-                        {data?.map(i => <div key={i?.id} className='font-poppins text-white flex flex-row gap-x-3 items-center'>
-                            <div className='p-3.5 bg-[linear-gradient(214deg,#B75CFF_6.04%,#F0118B_92.95%)] rounded-xl inline text-xl xl:text-2xl font-semibold'>
-                                {/* {i?.title} */}
-                                <CountUp
-                                    suffix={i?.suffix}
-                                    to={i?.count}
-                                    from={0}
-                                    decimals={0}
-                                    duration={0.5}
-                                    startOnView={true}
-                                />
-                            </div>
-                            <p className='font-medium text-sm xl:text-base leading-5'>{i?.subTitle}</p>
-                        </div>)}
+                    <div className='space-y-5 mt-5'>
+
+                        <p className='font-poppins text-base xl:text-lg text-zinc-400'>
+                            My style blends neo-baroque drama and impressionistic atmosphere with influences from Eastern and Western fantasy and anime, creating a dreamy intensity that balances the intimate with the otherworldly. Through this visual language, I reimagine the everyday — from a friend’s wedding to a plate of dumplings or pancakes — as sites of empowerment, love, and shared humanity.
+                        </p>
+
+                        <p className='font-poppins text-base xl:text-lg text-zinc-400'>
+                            Alongside my artistic practice, I am deeply engaged with historical research, treating each painting as a form of visual historiography: preserving memory, opening it to multiple interpretations, and situating the personal within larger cultural and philosophical narratives. My recurring themes — love, animals, empowerment, time, philosophy, and history — reflect my conviction that art is not only personal but ultimately universal.
+                        </p>
 
                     </div>
 

@@ -48,7 +48,7 @@ function Contact() {
                 initial={{ x: -60, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1, transition: { duration: 0.4 } }}
                 viewport={{ once: true }}
-                className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-28'>
+                className='grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16 md:mt-20 lg:mt-24 xl:mt-28'>
                 <div className='space-y-6'>
                     <h3 className='text-4xl font-instrument font-extrabold text-white'>Drop your <span className='text-primary'>requirements</span> <br /> through this way</h3>
                     <p className='text-zinc-400 font-sans'>Lorem Ipsum is simply dummy text the printing and typesetting industry. Ipsum has been dummy text ever since the 1500.</p>

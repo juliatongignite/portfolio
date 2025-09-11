@@ -6,15 +6,27 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 
+import img1 from "../../../../../public/featured-work/233706E3-CC09-408D-802C-E02CDCFC5484.jpg"
+import img2 from "../../../../../public/featured-work/BD1EF6E3-6769-441E-8EEF-02FA09CF167C.jpg"
+import img3 from "../../../../../public/featured-work/D3470175-9037-4153-8E80-8A1027C0F383.jpg"
+import img4 from "../../../../../public/featured-work/E79F0AC5-0950-485F-8C77-EEED2EB18FB5.jpg"
+import img5 from "../../../../../public/featured-work/F1D158C8-A838-426D-9914-63921DED52E7.jpg"
 
 import Image, { StaticImageData } from 'next/image';
-import { projects } from '../../ArtGallery/Artgallery';
 
 export interface IProject {
     id: number,
     img: StaticImageData,
     name: string
 }
+
+export const featuredWorks: IProject[] = [
+    { id: 1, img: img1, name: "This Fairy is Allergic to the Sun, 2024" },
+    { id: 2, img: img2, name: "Animal Portraits, 2025" },
+    { id: 3, img: img3, name: "Animal Portraits, 2025" },
+    { id: 4, img: img4, name: "Moments of Self, 2025" },
+    { id: 5, img: img5, name: "Animals at the Nashville Fair, 2025" },
+]
 
 
 
@@ -50,7 +62,7 @@ function Carousel() {
                 modules={[Pagination, Autoplay]}
                 className="">
 
-                {projects?.map(slide => <SwiperSlide key={slide?.id}>
+                {featuredWorks?.map(slide => <SwiperSlide key={slide?.id}>
                     <Image src={slide?.img} className='w-full h-[200px] md:h-[380px] lg:h-[450px] xl:h-[540px] object-cover' alt='Juliyatong Art Image' placeholder='blur' />
                     <p className='font-poppins text-xs md:text-sm lg:text-base font-normal mt-2.5'>{slide?.name}</p>
                 </SwiperSlide>)}

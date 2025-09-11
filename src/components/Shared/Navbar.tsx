@@ -9,7 +9,7 @@ import NavSheet from './NavSheet';
 export const routs = [
     { name: "Home", rout: "/", id : 1 },
     { name: "Artworks Gallery", rout: "/art-gallery", id : 2 },
-    { name: "Philosophy & Background", rout: "/philosopy", id : 3 },
+    { name: "Philosophy", rout: "/philosopy", id : 3 },
     { name: "Contact", rout: "/contact", id : 4 },
 ]
 
