@@ -7,8 +7,8 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
 
-        if (!body?.email) {
-            return Response.json({ message: 'Enter email' }, { status: 400 });
+        if (!body?.email || !body?.name || !body?.phone || !body?.message) {
+            return Response.json({ message: 'All field is required' }, { status: 400 });
         }
 
         const emailPath = path.join(process.cwd(), "src", "utils", "contact.html");
