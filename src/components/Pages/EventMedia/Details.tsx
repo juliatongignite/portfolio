@@ -9,7 +9,7 @@ const MotionImg = motion.create(Image)
 
 function Details({ matchedData }: { matchedData: subType }) {
   return (
-    <div className='py-20 space-y-8'>
+    <div className='py-12 md:py-16 lg:py-20 space-y-5 md:space-y-6 lg:space-y-8'>
 
       <motion.h3 initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
