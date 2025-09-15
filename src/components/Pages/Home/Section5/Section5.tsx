@@ -25,7 +25,6 @@ function Section5() {
                                 viewport={{ once: true }}
                                 className='h-0.5 bg-zinc-600 w-full'></motion.div>
 
-
                             <motion.span
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: { delay: 0.4 } }}
