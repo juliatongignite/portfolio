@@ -21,11 +21,11 @@ export interface IProject {
 }
 
 export const featuredWorks: IProject[] = [
-    { id: 1, img: img1, name: "This Fairy is Allergic to the Sun, 2024" },
-    { id: 2, img: img2, name: "Animal Portraits, 2025" },
-    { id: 3, img: img3, name: "Animal Portraits, 2025" },
-    { id: 4, img: img4, name: "Moments of Self, 2025" },
-    { id: 5, img: img5, name: "Animals at the Nashville Fair, 2025" },
+    { id: 1, img: img1, name: "This Fairy is Allergic to the Sun" },
+    { id: 2, img: img2, name: "Recovery" },
+    { id: 3, img: img3, name: "Song Song the Miniature Poodle" },
+    { id: 4, img: img4, name: "Shared Sovereignty" },
+    { id: 5, img: img5, name: "Anise the Cow" },
 ]
 
 

@@ -95,7 +95,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 4,
-                        img: s1_5,
+                        img: s1_3,
                     }
                 ],
                 video: "/media/loki the pig painted by julia tong.mov"

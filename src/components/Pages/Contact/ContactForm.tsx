@@ -21,8 +21,6 @@ function ContactForm() {
 
             const res = await HandleSendMessage({ name, email, phone, message });
 
-            console.log(res)
-
             if (res?.success) {
                 setSuccess(true)
                 setError(null)

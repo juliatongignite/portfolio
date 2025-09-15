@@ -12,7 +12,8 @@ function Footer() {
     const routs = [
         { name: "Artworks Gallery", rout: "/art-gallery", id: 2 },
         { name: "Philosophy & Background", rout: "/philosopy", id: 3 },
-        { name: "Contact", rout: "/contact", id: 4 },
+        { name: "Highlights", rout: "/event-media-exhabition-workshop", id: 4 },
+        { name: "Contact", rout: "/contact", id: 5 },
     ]
 
     return (

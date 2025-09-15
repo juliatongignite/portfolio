@@ -1,7 +1,7 @@
 import React from 'react'
 import { data } from '../../../page';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+import Details from '@/components/Pages/EventMedia/Details';
 
 async function page({ params }: { params: Promise<{ id: string, title: string, subId: string }> }) {
   const { id, title, subId } = await params;
@@ -25,29 +25,7 @@ async function page({ params }: { params: Promise<{ id: string, title: string, s
       {/* -------------for conteent---------------- */}
       <div className='min-h-screen bg-[#191B1B]'>
         <div className='container pt-[78px]'>
-          <div className='py-20 space-y-8'>
-
-
-            <h3 className='text-2xl font-poppins text-white font-semibold'>{matchedData?.title}</h3>
-            <div className='space-y-5'>
-              {matchedData?.details?.map((i, indx) => {
-                return <p key={indx} className='text-zinc-300 text-base font-poppins'>{i}</p>
-              })}
-            </div>
-
-            <div className='flex flex-row flex-wrap gap-5'>
-              {matchedData?.arts?.map(art => {
-                return <Image key={art?.id} alt='art image' src={art?.img} placeholder='blur' className='h-60 w-auto max-w-lg' />
-              })}
-            </div>
-
-            {
-              matchedData?.video && <video width="800" height="240" className='w-full max-w-xl mx-auto h-auto' controls={true} preload="none" autoPlay muted>
-                <source src={matchedData?.video} type="video/mp4" />
-              </video>
-            }
-
-          </div>
+          <Details matchedData={matchedData}/>
         </div>
       </div>
     </div>

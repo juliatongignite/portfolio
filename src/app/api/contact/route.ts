@@ -5,6 +5,7 @@ import fs from 'fs';
 
 export async function POST(request: Request) {
     try {
+        console.log("req comes-----------")
         const body = await request.json();
 
         if (!body?.email || !body?.name || !body?.phone || !body?.message) {

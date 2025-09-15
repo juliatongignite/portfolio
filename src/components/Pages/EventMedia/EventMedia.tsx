@@ -10,6 +10,8 @@ function EventMedia() {
         <div className='space-y-28 py-20'>
             {data?.map(i => {
                 return <div key={i?.id} className='space-y-8'>
+
+
                     <div className='flex flex-row items-center gap-x-5 relative'>
                         <p className='uppercase text-sm text-primary font-poppins flex-shrink-0'>{i?.sectionName}</p>
                         <div className='w-full relative'>
@@ -20,15 +22,18 @@ function EventMedia() {
                                 className='h-0.5 bg-zinc-600 w-full'></motion.div>
                             <motion.span
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: 1, transition: { delay: 0.4 } }}
+                                whileInView={{ opacity: 1, transition: { delay: 0.4 } }}
                                 viewport={{ once: true }}
                                 className='absolute -top-[2px] right-0 h-1.5 w-1.5 bg-zinc-600 rounded-full'></motion.span>
 
                         </div>
                     </div>
 
-
-                    <h2 className='text-4xl text-white font-instrument font-semibold max-w-md'>{i?.sectionttile}</h2>
+                    <motion.h2
+                        initial={{ x: 30, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1, transition: { duration: 0.4 } }}
+                        viewport={{ once: true }}
+                        className='text-4xl text-white font-instrument font-semibold max-w-md'>{i?.sectionttile}</motion.h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                         {i?.datas?.map(cardData => {
@@ -44,8 +49,13 @@ function EventMedia() {
 
 export default EventMedia
 
-const Card = ({ data, rootId }: { data: any, rootId : number }) => {
-    return <div className='bg-white p-4 rounded-xl'>
+const Card = ({ data, rootId }: { data: any, rootId: number }) => {
+    return <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ y: 0, opacity: 1, transition: { duration: 0.4, delay: 0.2 * data?.id } }}
+        viewport={{ once: true }}
+
+        className='bg-white p-4 rounded-xl'>
         <Image src={data?.arts[0]?.img} alt='image' className='w-full h-60 object-cover rounded-lg' placeholder='blur' />
         <Link href={`/event-media-exhabition-workshop/${rootId}/${data.id}/${data?.title}`}>
             <div className='py-5 px-2 space-y-1.5'>
@@ -58,6 +68,6 @@ const Card = ({ data, rootId }: { data: any, rootId : number }) => {
                 </p>
             </div>
         </Link>
-    </div>
+    </motion.div>
 
 }

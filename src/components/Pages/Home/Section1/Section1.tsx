@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import heroImg from "../../../../../public/hero-bg.png"
-import heroImg1 from "../../../../../public/hero-bg1.jpeg"
+import heroImg1 from "../../../../../public/media/international artists exhibition 2024_metro arts centennial arts center_julia tong.jpg"
 import Its_me from './Its_me'
 import { motion } from "motion/react"
 import Marquee from 'react-fast-marquee'
@@ -11,7 +11,7 @@ function Section1() {
     return (
         <div>
             <div className="relative">
-                <Image src={heroImg} alt="Juliyatong hero-image" placeholder='blur' className='w-full h-80 md:h-[450px] lg:h-screen object-cover' />
+                <Image src={heroImg1} alt="Juliyatong hero-image" placeholder='blur' className='w-full h-80 md:h-[450px] lg:h-screen object-cover' />
 
                 {/* w-full h-72 md:h-[450px] lg:h-[600px] xl:max-h-[800px] 2xl:max-h-[850px] object-cover */}
 
