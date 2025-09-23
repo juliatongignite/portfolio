@@ -32,17 +32,15 @@ function Section3() {
               transition: { duration: 0.5, type: "spring", stiffness: 180, damping: 20 },
             }}
             viewport={{ once: true }}
-
             className="group relative overflow-hidden rounded-full border border-zinc-300 px-4 md:px-5 lg:px-7 py-2 md:py-2.5 lg:py-3 text-zinc-700 hover:border-primary hover:text-white transition-colors duration-500 font-poppins"
           >
             <span className="relative z-10 text-xs md:text-sm flex flex-row gap-x-1 items-center">
-              See all project
+              See All Art's
               <MdOutlineKeyboardArrowRight className='size-5' />
             </span>
             <span className="absolute inset-0 overflow-hidden rounded-md">
               <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-primary transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
             </span>
-
           </MotionLink>
         </div>
 

@@ -5,7 +5,6 @@ import fs from 'fs';
 
 export async function POST(request: Request) {
     try {
-        console.log("req comes-----------")
         const body = await request.json();
 
         if (!body?.email || !body?.name || !body?.phone || !body?.message) {
@@ -33,8 +32,8 @@ export async function POST(request: Request) {
             .replace('{{date}}', new Date().toString())
 
         const res = await transporter.sendMail({
-            from: 'hridoychandrapaul.10@gmail.com', // sender address
-            to: "hridoychandrapaul.10@gmail.com", // list of receivers
+            from: 'juliagtong@gmail.com', // sender address
+            to: "juliagtong@gmail.com", // list of receivers
             subject: "Got a message from Portfolio",
             text: '', // plain text body
             html: bodyData, // html body

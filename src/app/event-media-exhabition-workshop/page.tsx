@@ -10,7 +10,7 @@ import media2_3 from "../../../public/media/necat forging ahead episode 7 julia 
 import media2_2 from "../../../public/media/necat forging ahead episode 7 julia tong_ israel garcia_ asia pyron_ jami anderson_ and painting of kristoff.jpg"
 
 import media3_1 from "../../../public/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg"
-import media3_2 from "../../../public/media/necat forging ahead episode 7 staff.jpeg"
+import media3_2 from "../../../public/media/media-2.png"
 import media3_3 from "../../../public/media/international artists exhibition 2024_metro arts centennial arts center_julia tong.jpg"
 
 

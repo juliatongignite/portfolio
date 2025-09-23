@@ -12,7 +12,7 @@ function EventMedia() {
                 return <div key={i?.id} className='space-y-5 md:space-y-6 lg:space-y-8'>
 
                     <div className='flex flex-row items-center gap-x-5 relative'>
-                        <p className='uppercase text-sm text-primary font-poppins flex-shrink-0'>{i?.sectionName}</p>
+                        <p className='uppercase text-sm text-primary font-sans flex-shrink-0'>{i?.sectionName}</p>
                         <div className='w-full relative'>
                             <motion.div
                                 initial={{ width: 0 }}

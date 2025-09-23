@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 
 import s1_1 from "../../../../public/arts/serries1/img1.jpg"
@@ -63,6 +63,19 @@ import s12_3 from "../../../../public/arts/serries12/img3.png"
 import s14_1 from "../../../../public/arts/serries14/img1.jpeg"
 
 import { motion } from "motion/react"
+import {
+    isImageFitCover,
+    isImageSlide,
+    useLightboxProps,
+    useLightboxState,
+    Lightbox,
+    SlideImage
+} from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 export const projects = [
     {
@@ -460,7 +473,7 @@ export const projects = [
                 media: "Oil paint on canvas.",
                 Dimensions: "36” x 48”"
             },
-            
+
         ],
     },
 ]
@@ -515,6 +528,8 @@ const ArtCard = ({ art }: {
         Dimensions
     } = art;
 
+    const [open, setOpen] = useState(false)
+
     return <motion.div initial={{ y: 10, opacity: 0 }}
         whileInView={{
             opacity: 1,
@@ -524,7 +539,7 @@ const ArtCard = ({ art }: {
                 delay: 0.1 * id
             },
         }} viewport={{ once: true }} className='bg-slate-900/40 p-5 rounded-xl border border-zinc-700'>
-        <Image src={img} alt='art image' className='w-full h-auto' placeholder='blur' />
+        <Image onClick={() => setOpen(true)} src={img} alt='art image' className='w-full h-auto cursor-pointer' placeholder='blur' />
 
         <div className='space-y-1.5 mt-5'>
             <p className='text-primary font-poppins text-sm font-medium'>
@@ -540,5 +555,18 @@ const ArtCard = ({ art }: {
                 <span className='text-white ml-1'>{Dimensions}</span>
             </p>
         </div>
+
+        <Lightbox
+            open={open}
+            close={() => setOpen(false)}
+            slides={[img]}
+            // render={{ slide: NextJsImage }}
+            plugins={[Fullscreen, Zoom]}
+            carousel={{ finite: true, }}
+            render={{
+                buttonPrev: () => null,
+                buttonNext: () => null,
+            }}
+        />
     </motion.div>
 }
