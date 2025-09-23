@@ -34,14 +34,16 @@ export type subType = {
         id: number,
         img: StaticImageData,
     }[],
-    video?: string
+    video?: string,
+    link?: string,
 }
 
 type Roottype = {
     id: number,
     sectionName: string,
     sectionttile: string,
-    datas: subType[]
+    datas: subType[],
+    
 }
 
 export const data: Roottype[] = [
@@ -98,7 +100,8 @@ export const data: Roottype[] = [
                         img: s1_3,
                     }
                 ],
-                video: "/media/loki the pig painted by julia tong.mov"
+                video: "/media/loki the pig painted by julia tong.mov",
+                link: "https://www.newschannel5.com/news/state/tennessee/davidson-county/meet-the-artist-painting-one-hour-portraits-of-the-nashville-fairs-animals"
             },
             {
                 id: 2,
