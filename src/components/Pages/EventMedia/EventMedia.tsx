@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from "motion/react"
 import Image from 'next/image'
 import Link from 'next/link'
+import { placeHolderBlurImg } from '@/lib/utils'
 
 function EventMedia() {
     return (
@@ -55,7 +56,7 @@ const Card = ({ data, rootId }: { data: any, rootId: number }) => {
         viewport={{ once: true }}
 
         className='bg-white p-4 rounded-xl'>
-        <Image src={data?.arts[0]?.img} alt='image' className='w-full h-60 object-cover rounded-lg' placeholder='blur' />
+        <Image src={data?.arts[0]?.img} alt='image' className='w-full h-60 object-cover rounded-lg' placeholder='blur' blurDataURL={placeHolderBlurImg} height={2000} width={2000} />
         <Link href={`/event-media-exhabition-workshop/${rootId}/${data.id}/${data?.title}`}>
             <div className='py-5 px-2 space-y-1.5'>
                 <p className='text-zinc-500 text-sm font-poppins'>{data?.timeLine}</p>

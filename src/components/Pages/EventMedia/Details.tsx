@@ -12,6 +12,7 @@ import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Link from 'next/link';
+import { placeHolderBlurImg } from '@/lib/utils';
 
 const MotionImg = motion.create(Image)
 const MotionLink = motion.create(Link)
@@ -44,7 +45,7 @@ function Details({ matchedData }: { matchedData: subType }) {
             initial={{ y: 30, opacity: 0 }}
             onClick={() => setOpen(true)}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.4, delay: 0.15 * art?.id } }}
-            key={art?.id} alt='art image' src={art?.img} placeholder='blur' height={2000} width={2000} className='w-full h-auto cursor-pointer' />
+            key={art?.id} alt='art image' src={art?.img} placeholder='blur' blurDataURL={placeHolderBlurImg} height={2000} width={2000} className='w-full h-auto cursor-pointer' />
         })}
       </div>
 
@@ -69,7 +70,7 @@ function Details({ matchedData }: { matchedData: subType }) {
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={matchedData?.arts?.map(i => i?.img)}
+        slides={matchedData?.arts?.map(i => ({ src: i?.img }))}
         plugins={[Fullscreen, Zoom]}
       // carousel={{ finite: true, }}
       // render={{

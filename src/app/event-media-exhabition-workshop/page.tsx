@@ -1,28 +1,5 @@
 import React from 'react'
-import s1_1 from "../../../public/arts/serries1/img1.jpg"
-import s1_2 from "../../../public/arts/serries1/img2.jpeg"
-import s1_3 from "../../../public/arts/serries1/img3.jpeg"
-import s1_4 from "../../../public/arts/serries1/img4.jpeg"
-import s1_5 from "../../../public/arts/serries1/img5.jpeg"
-
-import media2_1 from "../../../public/media/necat forging ahead episode 7 staff.jpeg"
-import media2_3 from "../../../public/media/necat forging ahead episode 7 julia tong and painting.jpeg"
-import media2_2 from "../../../public/media/necat forging ahead episode 7 julia tong_ israel garcia_ asia pyron_ jami anderson_ and painting of kristoff.jpg"
-
-import media3_1 from "../../../public/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg"
-import media3_2 from "../../../public/media/media-2.png"
-import media3_3 from "../../../public/media/international artists exhibition 2024_metro arts centennial arts center_julia tong.jpg"
-
-
-import media4_1 from "../../../public/media/The White Snake_The Meeting_Julia Tong.png"
-import media4_2 from "../../../public/media/The White Snake_The Longing_Julia Tong.png"
-import media4_3 from "../../../public/media/The White Snake_The Fight_Julia Tong.png"
-import media4_4 from "../../../public/media/Silent treatment 1_julia tong.jpg"
-import media4_5 from "../../../public/media/silent treatment 2_Julia Tong.jpg"
-
-import media5_1 from "../../../public/arts/serries5/img6.jpeg"
 import EventMedia from '@/components/Pages/EventMedia/EventMedia'
-import { StaticImageData } from 'next/image'
 
 export type subType = {
     id: number,
@@ -32,7 +9,7 @@ export type subType = {
     details: string[],
     arts: {
         id: number,
-        img: StaticImageData,
+        img: string,
     }[],
     video?: string,
     link?: string,
@@ -60,23 +37,23 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: s1_1
+                        img: "/arts/serries1/img1.jpg"
                     },
                     {
                         id: 2,
-                        img: s1_2
+                        img: "/arts/serries1/img2.jpeg"
                     },
                     {
                         id: 3,
-                        img: s1_3
+                        img: "/arts/serries1/img3.jpeg"
                     },
                     {
                         id: 4,
-                        img: s1_4
+                        img: "/arts/serries1/img4.jpeg"
                     },
                     {
                         id: 5,
-                        img: s1_5
+                        img: "/arts/serries1/img5.jpeg"
                     },
                 ],
             },
@@ -97,7 +74,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 4,
-                        img: s1_3,
+                        img: "/arts/serries1/img3.jpeg",
                     }
                 ],
                 video: "/media/loki the pig painted by julia tong.mov",
@@ -115,15 +92,15 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media2_1,
+                        img: "/media/necat forging ahead episode 7 staff.jpeg",
                     },
                     {
                         id: 2,
-                        img: media2_2,
+                        img: "/media/necat forging ahead episode 7 julia tong_ israel garcia_ asia pyron_ jami anderson_ and painting of kristoff.jpg",
                     },
                     {
                         id: 3,
-                        img: media2_3,
+                        img: "/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg",
                     },
                 ],
             },
@@ -144,7 +121,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media3_1,
+                        img: "/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg",
                     }
                 ],
             },
@@ -158,7 +135,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media3_2,
+                        img: "/media/media-2.png",
                     },
                 ],
                 video: "/media/soho house artist showcase.mov"
@@ -173,7 +150,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media3_3,
+                        img: "/media/international artists exhibition 2024_metro arts centennial arts center_julia tong.jpg",
                     },
                 ]
             },
@@ -195,23 +172,23 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media4_1,
+                        img: "/media/The White Snake_The Meeting_Julia Tong.png",
                     },
                     {
                         id: 2,
-                        img: media4_2,
+                        img: "/media/The White Snake_The Longing_Julia Tong.png",
                     },
                     {
                         id: 3,
-                        img: media4_3,
+                        img: "/media/The White Snake_The Fight_Julia Tong.png",
                     },
                     {
                         id: 4,
-                        img: media4_4,
+                        img: "/media/Silent treatment 1_julia tong.jpg",
                     },
                     {
                         id: 5,
-                        img: media4_5,
+                        img: "/media/silent treatment 2_Julia Tong.jpg",
                     },
                 ],
             },
@@ -224,7 +201,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: media5_1,
+                        img: "/arts/serries5/img6.jpeg",
                     }
                 ],
             },
