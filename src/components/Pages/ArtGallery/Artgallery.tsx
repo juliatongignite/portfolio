@@ -2,80 +2,14 @@
 import React, { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 
-import s1_1 from "../../../../public/arts/serries1/img1.jpg"
-import s1_2 from "../../../../public/arts/serries1/img2.jpeg"
-import s1_3 from "../../../../public/arts/serries1/img3.jpeg"
-import s1_4 from "../../../../public/arts/serries1/img4.jpeg"
-import s1_5 from "../../../../public/arts/serries1/img5.jpeg"
-
-
-import s2_1 from "../../../../public/arts/serries2/img1.jpeg"
-import s2_2 from "../../../../public/arts/serries2/img2.jpeg"
-
-import s8_1 from "../../../../public/arts/serries8/img1.jpeg"
-
-import s9_1 from "../../../../public/arts/serries9/img1.jpeg"
-import s9_2 from "../../../../public/arts/serries9/img2.png"
-
-import s13_1 from "../../../../public/arts/serries13/img1.jpeg"
-
-import s4_1 from "../../../../public/arts/serries4/img1.jpeg"
-import s4_2 from "../../../../public/arts/serries4/img2.jpeg"
-
-import s5_6 from "../../../../public/arts/serries5/img6.jpeg"
-
-import chaos from "../../../../public/arts/chaos.png"
-
-import s6_3 from "../../../../public/arts/serries6/img3.jpeg"
-import s6_1 from "../../../../public/arts/serries6/img1.jpeg"
-import s6_2 from "../../../../public/arts/serries6/img2.jpeg"
-import s6_4 from "../../../../public/arts/serries6/img4.jpeg"
-
-import s3_4 from "../../../../public/arts/serries3/img4.jpeg"
-import s3_2 from "../../../../public/arts/serries3/img2.jpeg"
-import s3_3 from "../../../../public/arts/serries3/img3.jpeg"
-import s3_1 from "../../../../public/arts/serries3/img1.jpeg"
-
-import s10_3 from "../../../../public/arts/serries10/img3.jpeg"
-import s10_1 from "../../../../public/arts/serries10/img1.jpeg"
-import s10_2 from "../../../../public/arts/serries10/img2.jpeg"
-
-import s11_1 from "../../../../public/arts/serries11/img1.jpeg"
-import s11_3 from "../../../../public/arts/serries11/img3.jpeg"
-import s11_4 from "../../../../public/arts/serries11/img4.jpeg"
-import s11_2 from "../../../../public/arts/serries11/img2.jpeg"
-
-import s5_2 from "../../../../public/arts/serries5/img2.jpeg"
-import s5_1 from "../../../../public/arts/serries5/img1.jpeg"
-
-import s7_2 from "../../../../public/arts/serries7/img2.png"
-import s7_3 from "../../../../public/arts/serries7/img3.jpeg"
-import s7_5 from "../../../../public/arts/serries7/img5.png"
-import s7_6 from "../../../../public/arts/serries7/img6.jpeg"
-import s7_1 from "../../../../public/arts/serries7/img1.png"
-import s7_4 from "../../../../public/arts/serries7/img4.jpeg"
-
-import s12_2 from "../../../../public/arts/serries12/img2.png"
-import s12_4 from "../../../../public/arts/serries12/img4.png"
-import s12_1 from "../../../../public/arts/serries12/img1.png"
-import s12_3 from "../../../../public/arts/serries12/img3.png"
-
-import s14_1 from "../../../../public/arts/serries14/img1.jpeg"
-
 import { motion } from "motion/react"
 import {
-    isImageFitCover,
-    isImageSlide,
-    useLightboxProps,
-    useLightboxState,
-    Lightbox,
-    SlideImage
+    Lightbox
 } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import { placeHolderBlurImg } from '@/lib/utils';
 
 export const projects = [
     {
@@ -84,35 +18,35 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s1_1,
+                img: "/arts/serries1/img1.jpg",
                 name: "Anise the Cow.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 2,
-                img: s1_2,
+                img: "/arts/serries1/img2.jpeg",
                 name: "Reason the Cow",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 3,
-                img: s1_3,
+                img: "/arts/serries1/img3.jpeg",
                 name: "Saxophone the Goat.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 4,
-                img: s1_4,
+                img: "/arts/serries1/img4.jpeg",
                 name: "Loki the Pig.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 4,
-                img: s1_5,
+                img: "/arts/serries1/img5.jpeg",
                 name: "The bunnies, Oak and River.",
                 media: " Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
@@ -125,14 +59,14 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s2_1,
+                img: "/arts/serries2/img1.jpeg",
                 name: "Shared Sovereignty.",
                 media: " Acrylic gouache on canvas.",
                 Dimensions: " 24”x 36”"
             },
             {
                 id: 2,
-                img: s2_2,
+                img: "/arts/serries2/img2.jpeg",
                 name: " Photo Taken by J at C’s.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
@@ -145,7 +79,7 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s8_1,
+                img: "/arts/serries8/img1.jpeg",
                 name: "This Fairy is Allergic to the Sun",
                 media: "Gouache on canvas sheet.",
                 Dimensions: "16” x 20”"
@@ -158,14 +92,14 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s9_1,
+                img: "/arts/serries9/img1.jpeg",
                 name: "A Homey Moment (Dumplings)",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "20” in diameter"
             },
             {
                 id: 2,
-                img: s9_2,
+                img: "/arts/serries9/img2.png",
                 name: "A Homey Moment (Pancakes, Biscuits, and Eggs).",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "20” in diameter."
@@ -178,7 +112,7 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s13_1,
+                img: "/arts/serries13/img1.jpeg",
                 name: "Tân Định Church in Vietnam",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "20” in diameter"
@@ -191,14 +125,14 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s4_1,
+                img: "/arts/serries4/img1.jpeg",
                 name: "Winter is Around the Corner.",
                 media: " Oil paint on canvas.",
                 Dimensions: "24” x 36”"
             },
             {
                 id: 2,
-                img: s4_2,
+                img: "/arts/serries4/img2.jpeg",
                 name: "Spring is On the Way",
                 media: "Oil paint on canvas.",
                 Dimensions: "24” x 36”"
@@ -211,7 +145,7 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s5_6,
+                img: "/arts/serries5/img6.jpeg",
                 name: "Winter is Around the Corner.",
                 media: " Oil paint on canvas.",
                 Dimensions: "24” x 36”"
@@ -224,7 +158,7 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: chaos,
+                img: "/arts/chaos.png",
                 name: "Life is a Chaotic Lasagna",
                 media: "Oil paint on canvas.",
                 Dimensions: "24” x 36”"
@@ -237,28 +171,28 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s6_3,
+                img: "/arts/serries6/img3.jpeg",
                 name: "Song Song the Miniature Poodle.",
                 media: " Acrylic gouache on round canvas.",
                 Dimensions: "20” in diameter."
             },
             {
                 id: 2,
-                img: s6_1,
+                img: "/arts/serries6/img1.jpeg",
                 name: "My Sweet Queen, Sesame",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "20” in diameter."
             },
             {
                 id: 3,
-                img: s6_2,
+                img: "/arts/serries6/img2.jpeg",
                 name: "Link the Corgi",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "8” x 10”"
             },
             {
                 id: 4,
-                img: s6_4,
+                img: "/arts/serries6/img4.jpeg",
                 name: "Kristoff the Goat",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "36” x 48”"
@@ -271,28 +205,28 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s3_4,
+                img: "/arts/serries3/img4.jpeg",
                 name: "A Day of Grief Made Better by a Friend",
                 media: "Oil paint on canvas",
                 Dimensions: "16” x 20”"
             },
             {
                 id: 2,
-                img: s3_2,
+                img: "/arts/serries3/img2.jpeg",
                 name: "The Beginning of Clarity",
                 media: "Oil paint on canvas",
                 Dimensions: "16” x 20”"
             },
             {
                 id: 3,
-                img: s3_3,
+                img: "/arts/serries3/img3.jpeg",
                 name: "Lillies",
                 media: "Oil paint on canvas",
                 Dimensions: "24” x 30”"
             },
             {
                 id: 4,
-                img: s3_1,
+                img: "/arts/serries3/img1.jpeg",
                 name: "The Sun is Still Coming Tomorrow",
                 media: "Oil paint on canvas",
                 Dimensions: "12” x 36”"
@@ -305,21 +239,21 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s10_3,
+                img: "/arts/serries10/img3.jpeg",
                 name: "Phase 1",
                 media: "Oil paint on a round canvas glued to a digitally printed canvas",
                 Dimensions: "16” x 16”"
             },
             {
                 id: 2,
-                img: s10_1,
+                img: "/arts/serries10/img1.jpeg",
                 name: "Phase 2",
                 media: "Oil paint on a round canvas glued to a digitally printed canvas",
                 Dimensions: "16” x 16”"
             },
             {
                 id: 3,
-                img: s10_2,
+                img: "/arts/serries10/img2.jpeg",
                 name: "Phase 3",
                 media: "Oil paint on a round canvas glued to a digitally printed canvas",
                 Dimensions: "16” x 16”"
@@ -332,28 +266,28 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s11_1,
+                img: "/arts/serries11/img1.jpeg",
                 name: "Silent Treatment",
                 media: "Gouache on paper",
                 Dimensions: "12” x 12”"
             },
             {
                 id: 2,
-                img: s11_3,
+                img: "/arts/serries11/img3.jpeg",
                 name: "Codependency",
                 media: "Gouache on paper",
                 Dimensions: "12” x 12”"
             },
             {
                 id: 3,
-                img: s11_4,
+                img: "/arts/serries11/img4.jpeg",
                 name: "Judgement on Others",
                 media: "Gouache on paper",
                 Dimensions: "12” x 12”"
             },
             {
                 id: 4,
-                img: s11_2,
+                img: "/arts/serries11/img2.jpeg",
                 name: "Judgement on Self",
                 media: "Gouache on paper",
                 Dimensions: "12” x 12”"
@@ -366,14 +300,14 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s5_2,
+                img: "/arts/serries5/img2.jpeg",
                 name: "The Smokies, 1",
                 media: "Oil paint on canvas",
                 Dimensions: "12” x 36”"
             },
             {
                 id: 2,
-                img: s5_1,
+                img: "/arts/serries5/img1.jpeg",
                 name: "The Smokies 2",
                 media: "Oil paint on canvas.",
                 Dimensions: "12” x 36”"
@@ -386,42 +320,42 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s7_2,
+                img: "/arts/serries7/img2.png",
                 name: "Strawberry Shortcake",
                 media: "Gouache on canvas.",
                 Dimensions: "3” x 9” (outer pink frame not included in dimensions)"
             },
             {
                 id: 2,
-                img: s7_3,
+                img: "/arts/serries7/img3.jpeg",
                 name: "Strawberry Shortcake",
                 media: "Gouache on canvas.",
                 Dimensions: "4” x 4”"
             },
             {
                 id: 3,
-                img: s7_5,
+                img: "/arts/serries7/img5.png",
                 name: "My Room if I Were Van Gogh",
                 media: "Gouache on canvas.",
                 Dimensions: " 6” x 6” (outer pink frame not included in dimensions)"
             },
             {
                 id: 4,
-                img: s7_6,
+                img: "/arts/serries7/img6.jpeg",
                 name: "Cactus Fields",
                 media: "Gouache on canvas.",
                 Dimensions: "6” x 8”"
             },
             {
                 id: 5,
-                img: s7_1,
+                img: "/arts/serries7/img1.png",
                 name: "Roses",
                 media: "Gouache on canvas.",
                 Dimensions: "3” x 9” (outer pink frame not included in dimensions)"
             },
             {
                 id: 6,
-                img: s7_4,
+                img: "/arts/serries7/img4.jpeg",
                 name: "Photo Taken by J At C’s (small)",
                 media: "Gouache on canvas.",
                 Dimensions: "3” x 5”"
@@ -434,28 +368,28 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s12_2,
+                img: "/arts/serries12/img2.png",
                 name: "Weho Art Crawl 2024, Front.",
                 media: "Digital illustration",
                 Dimensions: ""
             },
             {
                 id: 2,
-                img: s12_4,
+                img: "/arts/serries12/img4.png",
                 name: "Weho Art Crawl 2024, Back.",
                 media: "Digital illustration",
                 Dimensions: ""
             },
             {
                 id: 3,
-                img: s12_1,
+                img: "/arts/serries12/img1.png",
                 name: "Weho Art Crawl 2025, Front.",
                 media: "Digital illustration",
                 Dimensions: ""
             },
             {
                 id: 4,
-                img: s12_3,
+                img: "/arts/serries12/img3.png",
                 name: "Weho Art Crawl 2025, Back.",
                 media: "Digital illustration",
                 Dimensions: ""
@@ -468,7 +402,7 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: s14_1,
+                img: "/arts/serries14/img1.jpeg",
                 name: "Recovery",
                 media: "Oil paint on canvas.",
                 Dimensions: "36” x 48”"
@@ -483,7 +417,7 @@ function Artgallery() {
     return (
         <div className='mt-10'>
             {
-                projects?.map((project, indx) => {
+                projects?.map((project) => {
                     return <div key={project?.id} className='relative pb-14 md:pb-20 lg:pb-24 xl:pb-28 space-y-8'>
                         <div className='overflow-hidden whitespace-nowrap'>
                             <motion.h5
@@ -512,7 +446,7 @@ export default Artgallery
 const ArtCard = ({ art }: {
     art: {
         id: number,
-        img: StaticImageData,
+        img: string,
         name: string,
         media: string,
         Dimensions: string
@@ -539,7 +473,7 @@ const ArtCard = ({ art }: {
                 delay: 0.1 * id
             },
         }} viewport={{ once: true }} className='bg-slate-900/40 p-5 rounded-xl border border-zinc-700'>
-        <Image onClick={() => setOpen(true)} src={img} alt='art image' className='w-full h-auto cursor-pointer' placeholder='blur' />
+        <Image onClick={() => setOpen(true)} src={img} alt='art image' className='w-full h-auto cursor-pointer' placeholder='blur' height={2000} width={2000} blurDataURL={placeHolderBlurImg} />
 
         <div className='space-y-1.5 mt-5'>
             <p className='text-primary font-poppins text-sm font-medium'>
@@ -559,7 +493,7 @@ const ArtCard = ({ art }: {
         <Lightbox
             open={open}
             close={() => setOpen(false)}
-            slides={[img]}
+            slides={[{ src: img }]}
             // render={{ slide: NextJsImage }}
             plugins={[Fullscreen, Zoom]}
             carousel={{ finite: true, }}
