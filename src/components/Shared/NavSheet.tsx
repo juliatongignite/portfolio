@@ -164,7 +164,7 @@ function NavSheet() {
 
                                 <ul>
                                     <li>
-                                        <MotionLink whileHover={"hover"} href={`/#`} className='flex flex-row gap-x-1 items-center text-white font-instrument font-medium uppercase text-base sm:text-lg group relative leading-none'>
+                                        <MotionLink whileHover={"hover"} href={`https://www.instagram.com/pinkjulietart`} target='_blank' className='flex flex-row gap-x-1 items-center text-white font-instrument font-medium uppercase text-base sm:text-lg group relative leading-none'>
                                             Instagram
                                             <GoArrowUpRight className='size-5' />
                                             <motion.span
