@@ -22,9 +22,22 @@ function Details({ matchedData }: { matchedData: subType }) {
   return (
     <div className='py-12 md:py-16 lg:py-20 space-y-5 md:space-y-6 lg:space-y-8'>
 
-      <motion.h3 initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
-        className='text-3xl lg:text-4xl font-poppins text-white font-semibold'>{matchedData?.title}</motion.h3>
+      <div>
+        <motion.h3 initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
+          className='text-3xl lg:text-4xl font-poppins text-white font-semibold'>{matchedData?.title}</motion.h3>
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.15 } }}
+          className='text-zinc-500 font-poppins font-medium mt-1'>{matchedData?.timeLine}</motion.p>
+      </div>
+
+      {
+        matchedData?.subtitle && <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.15 } }}
+          className='text-zinc-200 font-poppins font-medium mt-1 text-lg'>{matchedData?.subtitle}</motion.p>
+      }
 
       <div>
         <div className='space-y-5 mb-3'>

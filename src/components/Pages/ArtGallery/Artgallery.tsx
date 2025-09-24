@@ -18,35 +18,35 @@ export const projects = [
         arts: [
             {
                 id: 1,
-                img: "/arts/serries1/img1.jpg",
+                img: "/arts/serries1/img5.jpeg",
                 name: "Anise the Cow.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 2,
-                img: "/arts/serries1/img2.jpeg",
+                img: "/arts/serries1/img1.jpg",
                 name: "Reason the Cow",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 3,
-                img: "/arts/serries1/img3.jpeg",
+                img: "/arts/serries1/img2.jpeg",
                 name: "Saxophone the Goat.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 4,
-                img: "/arts/serries1/img4.jpeg",
+                img: "/arts/serries1/img3.jpeg",
                 name: "Loki the Pig.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
             },
             {
                 id: 4,
-                img: "/arts/serries1/img5.jpeg",
+                img: "/arts/serries1/img4.jpeg",
                 name: "The bunnies, Oak and River.",
                 media: " Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”"
@@ -146,9 +146,9 @@ export const projects = [
             {
                 id: 1,
                 img: "/arts/serries5/img6.jpeg",
-                name: "Winter is Around the Corner.",
-                media: " Oil paint on canvas.",
-                Dimensions: "24” x 36”"
+                name: "The Sun Forest Dragon.",
+                media: "Acrylic on Paper.",
+                Dimensions: "101” x 41”"
             },
         ],
     },
