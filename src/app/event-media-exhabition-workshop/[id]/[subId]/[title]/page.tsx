@@ -3,6 +3,22 @@ import { data } from '../../../page';
 import { notFound } from 'next/navigation';
 import Details from '@/components/Pages/EventMedia/Details';
 
+export async function generateMetadata({ params }: { params: Promise<{ id: string, title: string, subId: string }> }) {
+
+  const { id, title, subId } = await params;
+
+  const decodedTitle = decodeURIComponent(title)
+
+  const matchedData = data
+    .find(section => section.id.toString() === id)
+    ?.datas.find(item => (item.title === decodedTitle && item?.id.toString() == subId));
+
+  return {
+    title: `${matchedData?.title} | Juliatong`,
+    description: matchedData?.details,
+  }
+}
+
 async function page({ params }: { params: Promise<{ id: string, title: string, subId: string }> }) {
   const { id, title, subId } = await params;
 
@@ -25,7 +41,7 @@ async function page({ params }: { params: Promise<{ id: string, title: string, s
       {/* -------------for conteent---------------- */}
       <div className='min-h-screen bg-[#191B1B]'>
         <div className='container pt-[78px]'>
-          <Details matchedData={matchedData}/>
+          <Details matchedData={matchedData} />
         </div>
       </div>
     </div>

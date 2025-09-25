@@ -11,7 +11,7 @@ function Section1() {
     return (
         <div>
             <div className="relative">
-                <Image src={heroImg1} alt="Juliyatong hero-image" placeholder='blur' className='w-full h-80 md:h-[450px] lg:h-screen object-cover' />
+                <Image src={heroImg1} alt="Juliatong hero-image" placeholder='blur' className='w-full h-80 md:h-[450px] lg:h-screen object-cover' />
 
                 {/* w-full h-72 md:h-[450px] lg:h-[600px] xl:max-h-[800px] 2xl:max-h-[850px] object-cover */}
 

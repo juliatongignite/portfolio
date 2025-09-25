@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 import { motion } from "motion/react"
 import {
@@ -11,7 +11,13 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { placeHolderBlurImg } from '@/lib/utils';
 
-export const projects = [
+type serriesType = {
+    id: number,
+    title: string,
+    arts: { id: number, img: string, name: string, media: string, Dimensions: string }[]
+}
+
+export const serries : serriesType[] = [
     {
         id: 1,
         title: "Animals at the Nashville Fair, 2025.",
@@ -417,7 +423,7 @@ function Artgallery() {
     return (
         <div className='mt-10'>
             {
-                projects?.map((project) => {
+                serries?.map((project) => {
                     return <div key={project?.id} className='relative pb-14 md:pb-20 lg:pb-24 xl:pb-28 space-y-8'>
                         <div className='overflow-hidden whitespace-nowrap'>
                             <motion.h5

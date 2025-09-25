@@ -148,7 +148,7 @@ function Philosopy() {
                             className={`${isEven ? "lg:order-1" : "lg:order-2"}`}
                         >
                             <Image
-                                src={i?.image} className={`h-auto w-full object-cover rounded-xl`} alt='Juliyatong phylosopy image' placeholder='blur' />
+                                src={i?.image} className={`h-auto w-full object-cover rounded-xl`} alt='Juliatong phylosopy image' placeholder='blur' />
                         </motion.div>
 
                     </motion.div>
@@ -158,7 +158,7 @@ function Philosopy() {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 md:mt-12 lg:mt-16 xl:mt-20 overflow-hidden'>
                 {
                     images?.map((i, indx) => {
-                        return <Motionimg key={indx} initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 0.4, delay: 0.2 * i?.id } }} viewport={{once : true}} src={i?.img} className='w-full h-auto rounded-lg' alt='juliya image' />
+                        return <Motionimg key={indx} initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 0.4, delay: 0.2 * i?.id } }} viewport={{once : true}} src={i?.img} className='w-full h-auto rounded-lg' alt='julia image' />
                     })
                 }
             </div>

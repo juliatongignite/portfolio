@@ -17,7 +17,7 @@ function Cursor() {
     }, [])
 
     return (
-        <motion.div className='h-8 w-8 bg-transparent border border-zinc-300 rounded-full fixed z-50 pointer-events-none'
+        <motion.div className='h-8 w-8 bg-transparent border border-zinc-300 rounded-full fixed z-50 pointer-events-none hidden md:block'
             animate={{
                 x: mousePosition.x - 16,
                 y: mousePosition.y - 16,

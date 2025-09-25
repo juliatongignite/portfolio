@@ -1,5 +1,11 @@
 import React from 'react'
 import EventMedia from '@/components/Pages/EventMedia/EventMedia'
+// import { Metadata } from 'next';
+
+// export const metadata: Metadata = {
+//     title: "Highlights | Juliatong",
+//     description: "Juliatong, event, media, e",
+// };
 
 export type subType = {
     id: number,

@@ -11,7 +11,7 @@ function Footer() {
 
     const routs = [
         { name: "Artworks Gallery", rout: "/art-gallery", id: 2 },
-        { name: "Philosophy & Background", rout: "/philosopy", id: 3 },
+        { name: "Philosophy", rout: "/philosopy", id: 3 },
         { name: "Highlights", rout: "/event-media-exhabition-workshop", id: 4 },
         { name: "Contact", rout: "/contact", id: 5 },
     ]
@@ -20,30 +20,12 @@ function Footer() {
         <div className='bg-black'>
             <div className='container py-12 md:py-16 lg:py-20'>
                 <div className='flex flex-col md:flex-row justify-between gap-8'>
-                    <h6 className='text-white font-instrument font-semibold text-4xl lg:text-5xl space-y-2 leading-none'>
-                        <div className='overflow-hidden whitespace-nowrap'>
-                            <motion.h2
-                                initial={{ y: "100%" }}
-                                whileInView={{ y: 0, transition: { duration: 0.4 } }}
+                        <motion.h2
+                                initial={{ y: 40, opacity : 0 }}
+                                whileInView={{ y: 0, opacity : 1, transition: { duration: 0.4 } }}
                                 viewport={{ once: true }}
-                            >Have a vision on </motion.h2>
-                        </div>
-                        <div className='overflow-hidden whitespace-nowrap'>
-                            <motion.h2
-                                initial={{ y: "100%" }}
-                                viewport={{ once: true }}
-                                whileInView={{ y: 0, transition: { duration: 0.4, delay: 0.1 } }}
-                            >canvas? Let's bring it</motion.h2>
-                        </div>
-                        <div className='overflow-hidden whitespace-nowrap'>
-                            <motion.h2
-                                initial={{ y: "100%" }}
-                                viewport={{ once: true }}
-                                whileInView={{ y: 0, transition: { duration: 0.4, delay: 0.2 } }}
-                            >to life!</motion.h2>
-                        </div>
-
-                    </h6>
+                                className='leading-7 lg:leading-9 text-zinc-300 font-instrument font-semibold text-xl lg:text-3xl space-y-2 max-w-sm lg:max-w-xl'
+                            >Let's connect - whether you'd like to collect my art, publish it, or invlite me to tech and speak, I'd love to share my passion with you</motion.h2>
 
                     <MotionLink initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 0.4 } }} viewport={{ once: true }} href={`/contact`}>
                         <button className="group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-white py-1 pl-6 pr-14 font-medium text-primary hover:text-white duration-300">

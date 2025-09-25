@@ -6,9 +6,11 @@ import { MdPhoneInTalk } from 'react-icons/md';
 import { TfiEmail } from "react-icons/tfi";
 import { FaInstagram } from 'react-icons/fa6';
 import ContactForm from './ContactForm';
+import Link from 'next/link';
 
 function Contact() {
-    const contacts = [
+
+    const contacts: { id: number, title: string, value: string, icon: React.ReactNode, isLink?: boolean }[] = [
         // {
         //     id: 1,
         //     title: "Our Location",
@@ -31,7 +33,15 @@ function Contact() {
             id: 4,
             title: "Instagram",
             value: "https://www.instagram.com/pinkjulietart",
-            icon: <FaInstagram className='size-5 text-white' />
+            icon: <FaInstagram className='size-5 text-white' />,
+            isLink: true
+        },
+        {
+            id: 5,
+            title: "Cara",
+            value: "https://cara.app/juliatong",
+            icon: <div className='text-white px-1.5 text-sm font-black'>C</div>,
+            isLink: true
         },
     ]
 
@@ -62,7 +72,7 @@ function Contact() {
                                 </div>
                                 <div className='space-y-0.5'>
                                     <h6 className='text-base font-normal text-primary font-poppins'>{contact?.title}</h6>
-                                    <p className='text-zinc-400 font-poppins text-xs'>{contact?.value}</p>
+                                    {contact?.isLink ? <Link href={contact?.value} target='_blank' className='text-zinc-400 font-poppins text-xs'>{contact?.value}</Link> : <p className='text-zinc-400 font-poppins text-xs'>{contact?.value}</p>}
                                 </div>
                             </div>
                         })}

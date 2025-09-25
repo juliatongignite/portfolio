@@ -63,7 +63,7 @@ function Carousel() {
                 className="">
 
                 {featuredWorks?.map(slide => <SwiperSlide key={slide?.id}>
-                    <Image src={slide?.img} className='w-full h-[200px] md:h-[380px] lg:h-[450px] xl:h-[540px] object-cover' alt='Juliyatong Art Image' placeholder='blur' />
+                    <Image src={slide?.img} className='w-full h-[200px] md:h-[380px] lg:h-[450px] xl:h-[540px] object-cover' alt='Juliatong Art Image' placeholder='blur' />
                     <p className='font-poppins text-xs md:text-sm lg:text-base font-normal mt-2.5'>{slide?.name}</p>
                 </SwiperSlide>)}
 
