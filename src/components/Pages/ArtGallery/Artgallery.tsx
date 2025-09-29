@@ -31,7 +31,7 @@ type SeriesType = {
 export const series : SeriesType[] = [
     {
         id: 1,
-        title: "Animals at the Nashville Fair, 2025.",
+        title: "Animals at the Nashville Fair, 2025, 1 Hour Plein Air",
         arts: [
             {
                 id: 1,
@@ -84,6 +84,13 @@ export const series : SeriesType[] = [
                 media: "Acrylic gouache on canvas",
                 Dimensions: "48\" x 36\"",
             },
+            {   id:6,
+                img: "/arts/serries1/the-kind-boy-and-his-calf.jpg",
+                name: "The Kind Boy and His Calf",
+                media: "Acrylic gouache on canvas",
+                Dimensions: "18\" x 24\"",
+                Availability: "Sold."
+            }
 
         ],
     },
