@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import {
     Lightbox
 } from "yet-another-react-lightbox";
@@ -11,13 +11,24 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { placeHolderBlurImg } from '@/lib/utils';
 
-type serriesType = {
-    id: number,
-    title: string,
-    arts: { id: number, img: string, name: string, media: string, Dimensions: string }[]
-}
 
-export const serries : serriesType[] = [
+type SeriesType = {
+  id: number;
+  title: string;
+  arts: {
+  id: number;
+  img: string;
+  name: string;
+  media: string;
+  Dimensions: string;
+  Availability?: string; 
+}[];  
+
+};
+
+
+
+export const series : SeriesType[] = [
     {
         id: 1,
         title: "Animals at the Nashville Fair, 2025.",
@@ -27,36 +38,47 @@ export const serries : serriesType[] = [
                 img: "/arts/serries1/img5.jpeg",
                 name: "Anise the Cow.",
                 media: "Acrylic gouache on canvas.",
-                Dimensions: "18” x 24”"
+                Dimensions: "24” x 18”",
+                Availability: "Sold."
             },
             {
                 id: 2,
                 img: "/arts/serries1/img1.jpg",
                 name: "Reason the Cow",
                 media: "Acrylic gouache on canvas.",
-                Dimensions: "18” x 24”"
+                Dimensions: "24” x 18”"
             },
             {
                 id: 3,
                 img: "/arts/serries1/img2.jpeg",
                 name: "Saxophone the Goat.",
                 media: "Acrylic gouache on canvas.",
-                Dimensions: "18” x 24”"
+                Dimensions: "18” x 24”",
+                Availability: "Sold."
             },
             {
                 id: 4,
                 img: "/arts/serries1/img3.jpeg",
                 name: "Loki the Pig.",
                 media: "Acrylic gouache on canvas.",
-                Dimensions: "18” x 24”"
+                Dimensions: "24” x 18”",
+                Availability: "Sold."
             },
             {
                 id: 4,
                 img: "/arts/serries1/img4.jpeg",
                 name: "The bunnies, Oak and River.",
                 media: " Acrylic gouache on canvas.",
-                Dimensions: "18” x 24”"
+                Dimensions: "24” x 18”"
             },
+            {
+                id: 4, 
+                img: "/arts/serries1/ducks-lilly-marshall.jpg",
+                name: "The Ducks, Lilly and Marshall",
+                media: "Acrylic gouache on canvas.",
+                Dimensions: "24\" x 18\"",
+},
+
         ],
     },
     {
@@ -68,7 +90,8 @@ export const serries : serriesType[] = [
                 img: "/arts/serries2/img1.jpeg",
                 name: "Shared Sovereignty.",
                 media: " Acrylic gouache on canvas.",
-                Dimensions: " 24”x 36”"
+                Dimensions: " 24”x 36”",
+                Availability: "Sold."
             },
             {
                 id: 2,
@@ -180,7 +203,8 @@ export const serries : serriesType[] = [
                 img: "/arts/serries6/img3.jpeg",
                 name: "Song Song the Miniature Poodle.",
                 media: " Acrylic gouache on round canvas.",
-                Dimensions: "20” in diameter."
+                Dimensions: "20” in diameter.",
+                Availability: "Sold."
             },
             {
                 id: 2,
@@ -194,7 +218,8 @@ export const serries : serriesType[] = [
                 img: "/arts/serries6/img2.jpeg",
                 name: "Link the Corgi",
                 media: "Acrylic gouache on round canvas.",
-                Dimensions: "8” x 10”"
+                Dimensions: "8” x 10”",
+                Availability: "Sold."
             },
             {
                 id: 4,
@@ -423,7 +448,7 @@ function Artgallery() {
     return (
         <div className='mt-10'>
             {
-                serries?.map((project) => {
+                series?.map((project) => {
                     return <div key={project?.id} className='relative pb-14 md:pb-20 lg:pb-24 xl:pb-28 space-y-8'>
                         <div className='overflow-hidden whitespace-nowrap'>
                             <motion.h5
@@ -434,8 +459,8 @@ function Artgallery() {
                         </div>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                             {
-                                project?.arts?.map((i, indx) => {
-                                    return <ArtCard key={i?.id} art={i} indx={indx} />
+                                project?.arts?.map((art, indx) => {
+                                    return <ArtCard key={art.id} art={art} indx={indx} />
                                 })
                             }
                         </div>
@@ -449,52 +474,53 @@ function Artgallery() {
 
 export default Artgallery
 
-const ArtCard = ({ art }: {
+const ArtCard = (
+  { art, indx }: {
     art: {
-        id: number,
-        img: string,
-        name: string,
-        media: string,
-        Dimensions: string
-    },
-    indx: number
-}) => {
+      id: number;
+      img: string;
+      name: string;
+      media: string;
+      Dimensions: string;
+      Availability?: string; // optional
+    };
+    indx: number;
+  }
+) => {
+  const { id, img, name, media, Dimensions, Availability } = art;
+  const [open, setOpen] = useState(false);
 
-    const {
-        id,
-        img,
-        name,
-        media,
-        Dimensions
-    } = art;
+  return (
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 * id } }}
+      viewport={{ once: true }}
+      className="bg-slate-900/40 p-5 rounded-xl border border-zinc-700"
+    >
+      <Image
+        onClick={() => setOpen(true)}
+        src={img}
+        alt="art image"
+        className="w-full h-auto cursor-pointer"
+      />
 
-    const [open, setOpen] = useState(false)
-
-    return <motion.div initial={{ y: 10, opacity: 0 }}
-        whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.4,
-                delay: 0.1 * id
-            },
-        }} viewport={{ once: true }} className='bg-slate-900/40 p-5 rounded-xl border border-zinc-700'>
-        <Image onClick={() => setOpen(true)} src={img} alt='art image' className='w-full h-auto cursor-pointer' placeholder='blur' height={2000} width={2000} blurDataURL={placeHolderBlurImg} />
-
-        <div className='space-y-1.5 mt-5'>
-            <p className='text-primary font-poppins text-sm font-medium'>
-                Name :
-                <span className='text-white ml-1'>{name}</span>
-            </p>
-            <p className='text-primary font-poppins text-sm font-medium'>
-                Media :
-                <span className='text-white ml-1'>{media}</span>
-            </p>
-            <p className='text-primary font-poppins text-sm font-medium'>
-                Dimensions :
-                <span className='text-white ml-1'>{Dimensions}</span>
-            </p>
-        </div>
+      <div className="space-y-1.5 mt-5">
+        <p className="text-primary font-poppins text-sm font-medium">
+          Name : <span className="text-white ml-1">{name}</span>
+        </p>
+        <p className="text-primary font-poppins text-sm font-medium">
+          Media : <span className="text-white ml-1">{media}</span>
+        </p>
+        <p className="text-primary font-poppins text-sm font-medium">
+          Dimensions : <span className="text-white ml-1">{Dimensions}</span>
+        </p>
+        {Availability && (
+          <p className="text-primary font-poppins text-sm font-medium">
+            Availability : <span className="text-white ml-1">{Availability}</span>
+          </p>
+        )}
+      </div>
+    
 
         <Lightbox
             open={open}
@@ -509,4 +535,4 @@ const ArtCard = ({ art }: {
             }}
         />
     </motion.div>
-}
+)}
