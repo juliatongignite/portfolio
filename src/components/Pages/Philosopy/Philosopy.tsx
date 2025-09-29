@@ -19,7 +19,7 @@ import p9 from "../../../../public/philosopy/pylosopy9.jpeg"
 const data = [
     {
         id: 1,
-        title: "Abstract",
+        title: "Introduction",
         details: ["My philosophy is rooted in Daoist thought, where art is not fixed but a continuous circulation of energy, a rhythm of yin and yang. Each painting is both offering and dialogue: I release memory and vision into the world, and viewers reshape that energy into new narratives. As an artist-historian, I regard memory as architecture within our minds — solid yet alive in the movement of time. My style fuses neo-baroque drama and impressionistic atmosphere with Eastern and Western fantasy, producing a dreamy intensity that invites empathy. The personal becomes seed, the universal its inevitable bloom."],
         image: p7
     },
