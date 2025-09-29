@@ -21,7 +21,7 @@ const MotionLink = motion.create(Link);
 export const routs = [
     { name: "Home", rout: "/", id: 1 },
     { name: "Art Gallery", rout: "/art-gallery", id: 2 },
-    { name: "Philosophy", rout: "/philosopy", id: 3 },
+    { name: "Philosophy", rout: "/philosophy", id: 3 },
     { name: "Highlights", rout: "/event-media-exhabition-workshop", id: 4 },
     { name: "Contact", rout: "/contact", id: 5 },
 ]

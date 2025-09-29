@@ -1,20 +1,20 @@
 "use client"
 import React from 'react'
 import { motion } from "motion/react"
-import img1 from "../../../../public/philosopy/img1.jpg"
-import img2 from "../../../../public/philosopy/img2.jpg"
-import img3 from "../../../../public/philosopy/img3.jpg"
+import img1 from "../../../../public/philosophy/img1.jpg"
+import img2 from "../../../../public/philosophy/img2.jpg"
+import img3 from "../../../../public/philosophy/img3.jpg"
 import Image from 'next/image'
 
-import p1 from "../../../../public/philosopy/phylosopy1.jpeg"
-import p2 from "../../../../public/philosopy/pylosopy2.jpeg"
-import p3 from "../../../../public/philosopy/pylosopy3.jpeg"
-import p4 from "../../../../public/philosopy/pylosopy4.jpeg"
-import p5 from "../../../../public/philosopy/pylosopy5.jpeg"
-import p6 from "../../../../public/philosopy/pylosopy6.jpeg"
-import p7 from "../../../../public/philosopy/pylosopy7.jpeg"
-import p8 from "../../../../public/philosopy/pylosopy8.jpeg"
-import p9 from "../../../../public/philosopy/pylosopy9.jpeg"
+import p1 from "../../../../public/philosophy/phylosopy1.jpeg"
+import p2 from "../../../../public/philosophy/pylosopy2.jpeg"
+import p3 from "../../../../public/philosophy/pylosopy3.jpeg"
+import p4 from "../../../../public/philosophy/pylosopy4.jpeg"
+import p5 from "../../../../public/philosophy/pylosopy5.jpeg"
+import p6 from "../../../../public/philosophy/pylosopy6.jpeg"
+import p7 from "../../../../public/philosophy/pylosopy7.jpeg"
+import p8 from "../../../../public/philosophy/pylosopy8.jpeg"
+import p9 from "../../../../public/philosophy/pylosopy9.jpeg"
 
 const data = [
     {

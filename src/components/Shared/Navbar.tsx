@@ -8,7 +8,7 @@ import NavSheet from './NavSheet';
 export const routs = [
     { name: "Home", rout: "/", id : 1 },
     { name: "Artworks Gallery", rout: "/art-gallery", id : 2 },
-    { name: "Philosophy", rout: "/philosopy", id : 3 },
+    { name: "Philosophy", rout: "/philosophy", id : 3 },
     { name: "Highlights", rout: "/event-media-exhabition-workshop", id : 4 },
     { name: "Contact", rout: "/contact", id : 5 },
 ]
@@ -22,13 +22,11 @@ function Navbar() {
                 
                     <ul className={`hidden lg:flex flex-row w-auto gap-x-5 items-center border border-[#ffffff40] px-5 py-2.5 rounded-full font-abeezee text-base bg-white/20`}>
                         {
-                            routs?.map((rout, indx) => {
-                                return <li key={indx} className={`${pathName === rout?.rout ? "text-primary" : "text-white"}`}>
-                                    <Link href={rout?.rout}>
-                                        {rout?.name}
-                                    </Link>
-                                </li>
-                            })
+                            routs?.map((rout, indx) => <li key={indx} className={`${pathName === rout?.rout ? "text-primary" : "text-white"}`}>
+                                <Link href={rout?.rout}>
+                                    {rout?.name}
+                                </Link>
+                            </li>)
                         }
                     </ul>
               

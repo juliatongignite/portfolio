@@ -1,4 +1,4 @@
-import Philosopy from '@/components/Pages/Philosopy/Philosopy';
+import Philosopy from '@/components/Pages/Philosophy/Philosophy';
 import { Metadata } from 'next';
 import React from 'react'
 
