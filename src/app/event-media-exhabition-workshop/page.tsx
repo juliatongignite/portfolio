@@ -104,10 +104,7 @@ export const data: Roottype[] = [
                         id: 2,
                         img: "/media/necat forging ahead episode 7 julia tong_ israel garcia_ asia pyron_ jami anderson_ and painting of kristoff.jpg",
                     },
-                    {
-                        id: 3,
-                        img: "/media/Coop gallery_Julia Tong_this fairy is allergic to the sun.jpg",
-                    },
+                    
                 ],
             },
 
