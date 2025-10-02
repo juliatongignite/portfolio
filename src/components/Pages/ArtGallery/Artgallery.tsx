@@ -179,6 +179,14 @@ export const series : SeriesType[] = [
                 media: "Oil paint on canvas.",
                 Dimensions: "24” x 36”"
             },
+            {
+                id: 3,
+                img: "/arts/serries4/summer-is-in-the-reflection.jpg",
+                name: "Summer is In the Reflection",
+                media: "Acrylic gouache on canvas",
+                Dimensions: "24\" x 36\""
+        
+            }
         ],
     },
     {
