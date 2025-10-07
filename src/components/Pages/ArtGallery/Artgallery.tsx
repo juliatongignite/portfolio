@@ -167,14 +167,14 @@ export const series : SeriesType[] = [
         arts: [
             {
                 id: 1,
-                img: "/arts/serries4/img1.jpeg",
+                img: "/arts/serries4/winter-is-around-the-corner.jpg",
                 name: "Winter is Around the Corner.",
                 media: " Oil paint on canvas.",
                 Dimensions: "24” x 36”"
             },
             {
                 id: 2,
-                img: "/arts/serries4/img2.jpeg",
+                img: "/arts/serries4/spring-is-on-the-way.jpg",
                 name: "Spring is On the Way",
                 media: "Oil paint on canvas.",
                 Dimensions: "24” x 36”"
