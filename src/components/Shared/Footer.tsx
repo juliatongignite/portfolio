@@ -12,7 +12,7 @@ function Footer() {
     const routs = [
         { name: "Artworks Gallery", rout: "/art-gallery", id: 2 },
         { name: "Philosophy", rout: "/philosophy", id: 3 },
-        { name: "Highlights", rout: "/event-media-exhabition-workshop", id: 4 },
+        { name: "Highlights", rout: "/event-media-exhibition-workshop", id: 4 },
         { name: "Contact", rout: "/contact", id: 5 },
     ]
 
@@ -25,7 +25,7 @@ function Footer() {
                                 whileInView={{ y: 0, opacity : 1, transition: { duration: 0.4 } }}
                                 viewport={{ once: true }}
                                 className='leading-7 lg:leading-9 text-zinc-300 font-instrument font-semibold text-xl lg:text-3xl space-y-2 max-w-sm lg:max-w-xl'
-                            >Let's connect - whether you'd like to collect my art, publish it, or invlite me to tech and speak, I'd love to share my passion with you</motion.h2>
+                            >Let's connect - whether you'd like to collect my art, publish it, or invlite me to teach and speak, I'd love to share my passion with you</motion.h2>
 
                     <MotionLink initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1, transition: { duration: 0.4 } }} viewport={{ once: true }} href={`/contact`}>
                         <button className="group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-white py-1 pl-6 pr-14 font-medium text-primary hover:text-white duration-300">

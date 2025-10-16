@@ -1,5 +1,5 @@
 import React from 'react'
-import EventMedia from '@/components/Pages/EventMedia/EventMedia'
+import EventMedia from '../../components/Pages/EventMedia/EventMedia'
 // import { Metadata } from 'next';
 
 // export const metadata: Metadata = {
@@ -7,33 +7,43 @@ import EventMedia from '@/components/Pages/EventMedia/EventMedia'
 //     description: "Juliatong, event, media, e",
 // };
 
-export type subType = {
-    id: number,
-    title: string,
-    subtitle?: string,
-    timeLine: string,
-    details: string[],
-    arts: {
-        id: number,
-        img: string,
-    }[],
-    video?: string,
-    link?: string,
-}
+export type SubType = {
+  id: number;
+  title: string;
+  subtitle?: string;
 
-type Roottype = {
-    id: number,
-    sectionName: string,
-    sectionttile: string,
-    datas: subType[],
-    
-}
+  // accept either key for now (migrate to `timeline` later)
+  timeline?: string;
+  timeLine?: string;
 
-export const data: Roottype[] = [
+  details: string | string[];
+  eventImg?: string;
+  arts: {
+    id: number;
+    img: string;
+    title?: string;
+    description?: string;
+  }[];
+  video?: string;
+  link?: string;
+};
+
+
+
+
+type RootType = {
+  id: number;
+  sectionName: string;
+  sectionTitle: string;
+  datas: SubType[];
+};
+
+
+export const data: RootType[] = [
     {
         id: 1,
         sectionName: "Events",
-        sectionttile: "Stay updated with every event happening here.",
+        sectionTitle: "Stay updated with every event happening here.",
         datas: [
             {
                 id: 1,
@@ -43,23 +53,23 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: "/arts/serries1/img1.jpg"
+                        img: "/arts/series1/img1.jpg"
                     },
                     {
                         id: 2,
-                        img: "/arts/serries1/img2.jpeg"
+                        img: "/arts/series1/img2.jpeg"
                     },
                     {
                         id: 3,
-                        img: "/arts/serries1/img3.jpeg"
+                        img: "/arts/series1/img3.jpeg"
                     },
                     {
                         id: 4,
-                        img: "/arts/serries1/img4.jpeg"
+                        img: "/arts/series1/img4.jpeg"
                     },
                     {
                         id: 5,
-                        img: "/arts/serries1/img5.jpeg"
+                        img: "/arts/series1/img5.jpeg"
                     },
                 ],
             },
@@ -70,7 +80,7 @@ export const data: Roottype[] = [
     {
         id: 2,
         sectionName: "Media",
-        sectionttile: "Stay informed with latest news and media.",
+        sectionTitle: "Stay informed with latest news and media.",
         datas: [
             {
                 id: 1,
@@ -80,7 +90,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 4,
-                        img: "/arts/serries1/img3.jpeg",
+                        img: "/arts/series1/img3.jpeg",
                     }
                 ],
                 video: "/media/loki the pig painted by julia tong.mov",
@@ -114,12 +124,57 @@ export const data: Roottype[] = [
     {
         id: 3,
         sectionName: "Exhibition",
-        sectionttile: "Discover the latest trends and creativity here.",
+        sectionTitle: "Discover the latest trends and creativity here.",
         datas: [
             {
-                id: 1,
+  id: 1,
+  title: "Metro Parks Centennial Art Center 2025",
+  timeline: "October 3, 2025",
+  details: [
+    "I’m thrilled to be featured once again in the international artist exhibition at Metro Parks Centennial Art Center! This year, I showcased four paintings: Shared Sovereignty, Photo Taken by J at C’s, and two works from my A Homey Moment series (Chinese and American). The event was a vibrant celebration of art and culture, featuring traditional Russian dance performances, a lively jazz duo, and a delicious international potluck prepared by the artists. I contributed Kung Pao Shrimp (宫保虾仁) and Chinese Pork Belly (红烧肉) — both crowd favorites!"
+  ],
+
+  // ✅ event image is a sibling of `arts`
+  eventImg: "/media/metro-park-centennial-art-center-international-artist-exhibition-2025.png",
+
+  arts: [
+    {
+      id: 1,
+      title: "Shared Sovereignty",
+      img: "/media/shared-sovereignty-at-centennial-art-center.jpg",
+      description:
+        "My best friend on her wedding day—honoring Chinese and Western traditions; a celebration of her individuality and union."
+    },
+    {
+      id: 2,
+      title: "Photo Taken by J at C’s",
+      img: "/media/photo-taken-by-j-at-cs-at-centennial-art-center.jpg",
+      description:
+        "A peaceful moment at C’s home; books from China, a home-cooked meal, and two affectionate puppies."
+    },
+    {
+      id: 3,
+      title: "A Homey Moment (Chinese)",
+      img: "/media/a-homey-moment-chinese-at-centennial-art-center.jpg",
+      description:
+        "Homemade beef & napa cabbage dumplings—roots, family, and belonging."
+    },
+    {
+      id: 4,
+      title: "A Homey Moment (American)",
+      img: "/media/a-homey-moment-american-at-centennial-art-center.jpg",
+      description:
+        "Pancakes, eggs, and biscuits—American comfort and confidence."
+    }
+  ]
+},
+
+                    
+            
+            {
+                id: 2,
                 title: "Coop Gallery, Nashville",
-                timeLine: "March 28, 2025",
+                timeline: "March 28, 2025",
                 details: ["My artwork This Fairy is Allergic to the Sun was selected for Coop Gallery’s Flat File Project. It was exhibited during the opening show and then housed in the gallery’s flat file collection for one year. It was an honor to have my work included alongside many talented Nashville artists."],
                 arts: [
                     {
@@ -129,9 +184,9 @@ export const data: Roottype[] = [
                 ],
             },
             {
-                id: 2,
+                id: 3,
                 title: "Soho House, Nashville",
-                timeLine: "January 4, 2025",
+                timeline: "January 4, 2025",
                 details: [
                     "I had the honor of exhibiting a selection of my works at Soho House, an inspiring experience of sharing art with a community of like-minded creatives and collectors. The exhibition featured pieces from The Grief Series, The Recovery Series, The Fairy is Allergic to the Sun, The Sun Forest Dragon, The Seasons Series, along with several additional paintings not yet featured on my website. I am deeply grateful to Soho House for showcasing my work and fostering such a meaningful space for artistic dialogue.",
                 ],
@@ -144,7 +199,7 @@ export const data: Roottype[] = [
                 video: "/media/soho house artist showcase.mov"
             },
             {
-                id: 2,
+                id: 4,
                 title: "Metro Parks Centennial Art Center",
                 timeLine: "October 4, 2024.",
                 details: [
@@ -164,7 +219,7 @@ export const data: Roottype[] = [
     {
         id: 4,
         sectionName: "Workshop",
-        sectionttile: "Explore fresh ideas and hands-on experiences.",
+        sectionTitle: "Explore fresh ideas and hands-on experiences.",
         datas: [
             {
                 id: 1,
@@ -204,7 +259,7 @@ export const data: Roottype[] = [
                 arts: [
                     {
                         id: 1,
-                        img: "/arts/serries5/img6.jpeg",
+                        img: "/arts/series5/img6.jpeg",
                     }
                 ],
             },
@@ -213,21 +268,21 @@ export const data: Roottype[] = [
 
 ]
 
-function EventMediapage() {
+// app/event-media/page.tsx (App Router)
+// If you're in /pages, the default export can still be used the same way.
 
-    return (
-        <div className='relative'>
-            {/* ------------------for navbar------------- */}
-            <div className='bg-[#151515] absolute top-0 left-0 w-full h-[78px]'>
-            </div>
-            {/* -------------for conteent---------------- */}
-            <div className='min-h-screen bg-[#191B1B]'>
-                <div className='container pt-[78px]'>
-                    <EventMedia />
-                </div>
-            </div>
+export default function EventMediaPage() {
+  return (
+    <div className="relative">
+      {/* -------- navbar spacer/overlay -------- */}
+      <div className="bg-[#151515] absolute top-0 left-0 w-full h-[78px]" />
+
+      {/* -------- content -------- */}
+      <div className="min-h-screen bg-[#191B1B]">
+        <div className="container pt-[78px]">
+          <EventMedia />
         </div>
-    )
+      </div>
+    </div>
+  );
 }
-
-export default EventMediapage

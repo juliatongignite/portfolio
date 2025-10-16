@@ -9,7 +9,7 @@ export const routs = [
     { name: "Home", rout: "/", id : 1 },
     { name: "Artworks Gallery", rout: "/art-gallery", id : 2 },
     { name: "Philosophy", rout: "/philosophy", id : 3 },
-    { name: "Highlights", rout: "/event-media-exhabition-workshop", id : 4 },
+    { name: "Highlights", rout: "/event-media-exhibition-workshop", id : 4 },
     { name: "Contact", rout: "/contact", id : 5 },
 ]
 
