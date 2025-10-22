@@ -176,6 +176,7 @@ export const data: RootType[] = [
                 title: "Coop Gallery, Nashville",
                 timeline: "March 28, 2025",
                 details: ["My artwork This Fairy is Allergic to the Sun was selected for Coop Gallery’s Flat File Project. It was exhibited during the opening show and then housed in the gallery’s flat file collection for one year. It was an honor to have my work included alongside many talented Nashville artists."],
+                eventImg: "/media/Temp_Coop_Logo_Red.webp",
                 arts: [
                     {
                         id: 1,

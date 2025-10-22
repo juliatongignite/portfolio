@@ -55,7 +55,16 @@ const Card = ({ data, rootId }: { data: any, rootId: number }) => {
         viewport={{ once: true }}
 
         className='bg-white p-4 rounded-xl'>
-        <Image src={data?.arts[0]?.img} alt='image' className='w-full h-60 object-cover rounded-lg' placeholder='blur' blurDataURL={placeHolderBlurImg} height={2000} width={2000} />
+        <Image
+  src={data?.eventImg ?? data?.arts?.[0]?.img ?? "/media/fallback.jpg"}
+  alt={data?.title ?? "event image"}
+  className="w-full h-60 object-cover rounded-lg"
+  placeholder="blur"
+  blurDataURL={placeHolderBlurImg}
+  height={2000}
+  width={2000}
+/>
+
         <Link href={`/event-media-exhibition-workshop
 /${rootId}/${data.id}/${data?.title}`}>
             <div className='py-5 px-2 space-y-1.5'>
