@@ -11,10 +11,25 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { placeHolderBlurImg } from '@/lib/utils';
 
+function getYouTubeId(url?: string): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
+    const v = u.searchParams.get('v');
+    if (v) return v;
+    const parts = u.pathname.split('/');
+    return parts.pop() || null;
+  } catch {
+    return null;
+  }
+}
+
 
 type SeriesType = {
-  id: number;
+  id: number; 
   title: string;
+  description?: string;
   arts: {
   id: number;
   img: string;
@@ -22,6 +37,7 @@ type SeriesType = {
   media: string;
   Dimensions: string;
   Availability?: string; 
+  songUrl?: string;
 }[];  
 
 };
@@ -30,8 +46,24 @@ type SeriesType = {
 
 export const series : SeriesType[] = [
     {
+        id: 16,
+        title: "Self-Portraits Pairing With Jacob Collier",
+        description: "This special series pairs my paintings with the music of my favorite artist, <a href='https://www.jacobcollier.com/#/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Jacob Collier</a>. His work moves me deeply—each piece here visualizes how I feel when I listen to his songs. These paintings are my emotional and visual translation of his sound.",
+        arts: [
+            {
+                id: 1,
+                img: "/arts/series15/the-sun-is-in-your-eyes.JPG",
+                name: "The Sun is in Your Eyes",
+                media: "Acrylic gouache on canvas.",
+                Dimensions: "16” in diameter",
+                songUrl: "https://www.youtube.com/watch?v=39RBH-2hogk"
+            }
+        ],
+    },
+    {
         id: 1,
         title: "Animals at the Nashville Fair, 2025, 1 Hour Plein Air",
+        description: "This series was created over ten days at <a href='https://www.nashfair.fun/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>the Nashville Fair</a> — I painted one live subject each day within an hour. The animals were absolutely adorable and made the best models, and I learned so much from the breeders who graciously shared their knowledge.",
         arts: [
             {
                 id: 1,
@@ -65,26 +97,26 @@ export const series : SeriesType[] = [
                 Availability: "Sold."
             },
             {
-                id: 4,
+                id: 5,
                 img: "/arts/series1/img4.jpeg",
                 name: "The bunnies, Oak and River.",
                 media: " Acrylic gouache on canvas.",
                 Dimensions: "24” x 18”"
             },
             {
-                id: 5, 
+                id: 6, 
                 img: "/arts/series1/ducks-lilly-marshall.jpg",
                 name: "The Ducks, Lilly and Marshall",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "24\" x 18\"",
             },
-            {   id:6,
+            {   id: 7,
                 img: "/arts/series1/sweet-family.jpg",
                 name: "Sweet Family",
                 media: "Acrylic gouache on canvas",
                 Dimensions: "48\" x 36\"",
             },
-            {   id:7,
+            {   id: 8,
                 img: "/arts/series1/the-kind-boy-and-his-calf.jpg",
                 name: "The Kind Boy and His Calf",
                 media: "Acrylic gouache on canvas",
@@ -92,12 +124,20 @@ export const series : SeriesType[] = [
                 Availability: "Sold."
             },
             {
-                id:8,
+                id: 9,
                 img:"/arts/series1/phoenix-the-rooster.jpg",
                 name: "Phoenix the Rooster",
                 media: "Acrylic gouache on canvas",
                 Dimensions: "24\" x 18\"",
         
+            },
+            {
+                id: 10,
+                img: "/arts/series1/hannah-and-george-the seramas.jpg",
+                name: "Hannah and George the Seramas",
+                media: "Acrylic gouache on canvas.",
+                Dimensions: "24\" x 18\"",
+
             }
         ],
     },
@@ -144,7 +184,7 @@ export const series : SeriesType[] = [
                 img: "/arts/series9/img1.jpeg",
                 name: "A Homey Moment (Dumplings)",
                 media: "Acrylic gouache on round canvas.",
-                Dimensions: "20” in diameter"
+                Dimensions: "20” in diameter."
             },
             {
                 id: 2,
@@ -485,6 +525,20 @@ function Artgallery() {
                                 viewport={{ once: true }}
                                 className='font-poppins text-white font-semibold text-xl md:text-2xl lg:text-3xl text-center'>{project?.title}</motion.h5>
                         </div>
+                        {/* 👇 Add this block right here */}
+{project?.description && (
+  <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="font-poppins text-zinc-300 text-sm md:text-base leading-relaxed text-center max-w-3xl mx-auto px-4 whitespace-pre-line"
+  dangerouslySetInnerHTML={{ __html: project.description }}
+/>
+
+
+)}
+{/* 👆 End of added block */}
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                             {
                                 project?.arts?.map((art, indx) => {
@@ -511,12 +565,14 @@ const ArtCard = (
       media: string;
       Dimensions: string;
       Availability?: string; // optional
+      songUrl?: string;
     };
     indx: number;
   }
 ) => {
   const { id, img, name, media, Dimensions, Availability } = art;
   const [open, setOpen] = useState(false);
+   const [showPlayer, setShowPlayer] = useState(false);
 
   return (
     <motion.div
@@ -548,7 +604,34 @@ const ArtCard = (
           </p>
         )}
       </div>
+
+      {/* ⬇️ ADD the new code block right AFTER the metadata div, not inside it */}
+{art.songUrl && getYouTubeId(art.songUrl) && (
+  <div className="mt-4">
+    <button
+  onClick={() => setShowPlayer(v => !v)}
+  className="text-primary font-poppins text-sm font-medium border border-primary px-3 py-1.5 rounded-md hover:bg-primary hover:text-white transition"
+  aria-expanded={showPlayer}
+>
+  {showPlayer ? "Stop" : "Play song"}
+</button>
+
+
+    {showPlayer && (
+      <div className="mt-3 aspect-video w-full overflow-hidden rounded-md">
+        <iframe
+          className="w-full h-full"
+          src={`https://www.youtube-nocookie.com/embed/${getYouTubeId(art.songUrl)}?autoplay=1`}
+          title={`YouTube player for ${art.name}`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )}
+  </div>
+)}
     
+
 
         <Lightbox
             open={open}
