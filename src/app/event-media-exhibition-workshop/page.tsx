@@ -90,7 +90,7 @@ export const data: RootType[] = [
                 arts: [
                     {
                         id: 4,
-                        img: "/arts/series1/img3.jpeg",
+                        img: "/media/news-channel-5-nashville.png",
                     }
                 ],
                 video: "/media/loki the pig painted by julia tong.mov",

@@ -58,12 +58,17 @@ const Card = ({ data, rootId }: { data: any, rootId: number }) => {
         <Image
   src={data?.eventImg ?? data?.arts?.[0]?.img ?? "/media/fallback.jpg"}
   alt={data?.title ?? "event image"}
-  className="w-full h-60 object-cover rounded-lg"
+  className={`w-full rounded-lg ${
+    data?.title?.includes("Soho House")
+      ? "object-contain bg-zinc-900 h-60 p-6"
+      : "object-cover h-60"
+  }`}
   placeholder="blur"
   blurDataURL={placeHolderBlurImg}
   height={2000}
   width={2000}
 />
+
 
         <Link href={`/event-media-exhibition-workshop
 /${rootId}/${data.id}/${data?.title}`}>
