@@ -197,7 +197,7 @@ export const series : SeriesType[] = [
     },
     {
         id: 5,
-        title: "Pink Faith, 2025.",
+        title: "Pink Reverence, 2025.",
         arts: [
             {
                 id: 1,
