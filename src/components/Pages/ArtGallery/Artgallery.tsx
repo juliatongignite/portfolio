@@ -233,6 +233,13 @@ export const series : SeriesType[] = [
                 media: "Acrylic gouache on canvas",
                 Dimensions: "24\" x 36\""
         
+            },
+            {
+                id:4,
+                img:"/arts/series4/serries4/fall-is-in-the-branches.jpg",
+                name: "Fall is in the Branches",
+                media: "Acrylic gouache on canvas",
+                Dimensions: "24\" x 36\""
             }
         ],
     },
