@@ -71,7 +71,7 @@ export const series : SeriesType[] = [
                 name: "Anise the Cow.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "24” x 18”",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 2,
@@ -86,7 +86,7 @@ export const series : SeriesType[] = [
                 name: "Saxophone the Goat.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "18” x 24”",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 4,
@@ -94,7 +94,7 @@ export const series : SeriesType[] = [
                 name: "Loki the Pig.",
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "24” x 18”",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 5,
@@ -121,7 +121,7 @@ export const series : SeriesType[] = [
                 name: "The Kind Boy and His Calf",
                 media: "Acrylic gouache on canvas",
                 Dimensions: "18\" x 24\"",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 9,
@@ -151,7 +151,7 @@ export const series : SeriesType[] = [
                 name: "Shared Sovereignty.",
                 media: " Acrylic gouache on canvas.",
                 Dimensions: " 24”x 36”",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 2,
@@ -279,7 +279,7 @@ export const series : SeriesType[] = [
                 name: "Song Song the Miniature Poodle.",
                 media: " Acrylic gouache on round canvas.",
                 Dimensions: "20” in diameter.",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 2,
@@ -294,7 +294,7 @@ export const series : SeriesType[] = [
                 name: "Link the Corgi",
                 media: "Acrylic gouache on round canvas.",
                 Dimensions: "8” x 10”",
-                Availability: "Sold."
+                Availability: "Item has a new home."
             },
             {
                 id: 4,
