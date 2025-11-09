@@ -57,6 +57,14 @@ export const series : SeriesType[] = [
                 media: "Acrylic gouache on canvas.",
                 Dimensions: "16” in diameter",
                 songUrl: "https://www.youtube.com/watch?v=39RBH-2hogk"
+            },
+            {
+                id: 2,
+                img: "/arts/series15/bridge-over-troubled-water.jpg",
+                name: "Bridge Over Troubled Water",
+                media: "Acrylic gouache on canvas.",
+                Dimensions: "36\" x 48\"",
+                songUrl: "https://www.youtube.com/watch?v=yxsfV3vGweQ"
             }
         ],
     },
