@@ -306,6 +306,14 @@ export const series : SeriesType[] = [
             },
             {
                 id: 4,
+                img: "/arts/series6/ponyo-the-corgi.jpg",
+                name:  "Ponyo the Corgi",
+                media: "Acrylic gouache on round canvas.",
+                Dimensions: "8” x 10”",
+                Availability: "Item has a new home."
+            },
+            {
+                id: 5,
                 img: "/arts/series6/img4.jpeg",
                 name: "Kristoff the Goat",
                 media: "Acrylic gouache on round canvas.",
