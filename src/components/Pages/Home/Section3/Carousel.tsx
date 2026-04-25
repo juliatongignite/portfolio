@@ -11,6 +11,9 @@ import img2 from "../../../../../public/featured-work/BD1EF6E3-6769-441E-8EEF-02
 import img3 from "../../../../../public/featured-work/D3470175-9037-4153-8E80-8A1027C0F383.jpg"
 import img4 from "../../../../../public/featured-work/E79F0AC5-0950-485F-8C77-EEED2EB18FB5.jpg"
 import img5 from "../../../../../public/featured-work/F1D158C8-A838-426D-9914-63921DED52E7.jpg"
+import img6 from "/home/juliya/portfolio/public/featured-work/macarons - indulgence.jpg"
+import img7 from "/home/juliya/portfolio/public/featured-work/peaches - sensuality.jpg"
+import img8 from "/home/juliya/portfolio/public/featured-work/macarons - indulgence.jpg"
 
 import Image, { StaticImageData } from 'next/image';
 
@@ -26,6 +29,9 @@ export const featuredWorks: IProject[] = [
     { id: 3, img: img3, name: "Song Song the Miniature Poodle" },
     { id: 4, img: img4, name: "Shared Sovereignty" },
     { id: 5, img: img5, name: "Anise the Cow" },
+    { id: 6, img: img6, name: "Macarons - Indulgence" },
+    { id: 7, img: img7, name: "Peaches - Sensuality" },
+    { id: 8, img: img8, name: "Strawberries - Chaos" },
 ]
 
 

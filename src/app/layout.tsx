@@ -48,8 +48,8 @@ const popin = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Juliatong",
-  description: "Juliatong, portfolio website",
+  title: "Julia Tong",
+  description: "Julia Tong, Art Portfolio",
 };
 
 export default function RootLayout({

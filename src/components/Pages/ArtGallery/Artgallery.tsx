@@ -46,6 +46,41 @@ type SeriesType = {
 
 export const series : SeriesType[] = [
     {
+        id: 17,
+        title: "Abundance Series",
+        description: "Abundance unfolds through repetition and color, capturing the sensory and emotional fullness of life—where indulgence, vitality, and desire take shape.",
+        arts: [
+            {
+                id: 1,
+                img: "/arts/abundance series/strawberries - chaos.jpg",
+                name: "Abundance 1 - Strawberries, Chaos",
+                media: "Heavy acrylic and acrylic gouache on gessoed wooden panel.",
+                Dimensions: '12"x12"',
+            },
+            {
+                id: 2,
+                img: "/arts/abundance series/peaches - sensuality.jpg",
+                name: "Abundance 2 - Peaches, Sensuality",
+                media: "Heavy acrylic and acrylic gouache on canvas.",
+                Dimensions: '12"x12"',
+            },
+            {
+                id: 3,
+                img: "/arts/abundance series/peonies - vitality.jpg",
+                name: "Abundance 3 - Peonies, Vitality",
+                media: "Heavy acrylic and acrylic gouache on gessoed wooden panel.",
+                Dimensions: '12"x12"',
+            },
+            {
+                 id: 4,
+                img: "/arts/abundance series/macarons - indulgence.jpg",
+                name: "Abundance 4 - Macarons, Indulgence",
+                media: "Heavy acrylic and acrylic gouache on gessoed wooden panel.",
+                Dimensions: '12"x12"',
+            }
+        ]
+    },
+    {
         id: 16,
         title: "Self-Portraits Pairing With Jacob Collier",
         description: "This special series pairs my paintings with the music of my favorite artist, <a href='https://www.jacobcollier.com/#/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Jacob Collier</a>. His work moves me deeply—each piece here visualizes how I feel when I listen to his songs. These paintings are my emotional and visual translation of his sound.",
